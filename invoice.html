@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            width: 80mm; /* Thermal paper width */
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            padding: 2mm;
+            margin: 0;
+            word-wrap: break-word;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 3mm;
+        }
+        .divider {
+            border-top: 1px dashed #000;
+            margin: 3mm 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 1mm 0;
+            vertical-align: top;
+        }
+        .right {
+            text-align: right;
+        }
+        @media print {
+            .print-btn { display: none; }
+            body { margin: 0; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <strong>MAANSHIIL INC.</strong><br>
+        Maka almukarama Road<br>
+        Tel: 619007571 / 607571<br>
+        Email: sales@maanshiil.so
+    </div>
+
+    <div class="divider"></div>
+
+    <table>
+        <tr><td>Date:</td><td class="right">2024-12-22</td></tr>
+        <tr><td>Sale No/Ref:</td><td class="right">35</td></tr>
+        <tr><td>Sales Collector:</td><td class="right">Abdinoor Ali</td></tr>
+        <tr><td>Zone:</td><td class="right">A</td></tr>
+    </table>
+
+    <div class="divider"></div>
+
+    <strong>Customer:</strong><br>
+    Mohamed Abdi
+
+    <div class="divider"></div>
+
+    <table>
+        <tr>
+            <td colspan="3">#117- Water</td>
+        </tr>
+        <tr>
+            <td>10 x $1.5000</td>
+            <td colspan="2" class="right">$15.0000</td>
+        </tr>
+    </table>
+
+    <div class="divider"></div>
+
+    <table>
+        <tr><td>Total</td><td class="right">$15.0000</td></tr>
+        <tr><td>Discount</td><td class="right">$0.0000</td></tr>
+        <tr><td>Tax (VAT @ 0%)</td><td class="right">$0.0000</td></tr>
+        <tr><td><strong>Grand Total</strong></td><td class="right"><strong>$15.0000</strong></td></tr>
+    </table>
+
+    <div class="divider"></div>
+
+    <div style="text-align: center;">
+        Mahadsanid, Soo noqosho wanaagsan<br>
+        Thank you please come again<br>
+        © Madar | www.maanshiil.so
+    </div>
+
+    <button class="print-btn" onclick="window.print()">Print Receipt</button>
+</body>
+</html>
