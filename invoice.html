@@ -39,18 +39,9 @@
             border: none;
             border-radius: 5px;
         }
-        .customer-input {
-            margin-bottom: 10px;
-            padding: 5px;
-            width: calc(100% - 12px);
-            text-align: center;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
     </style>
 </head>
 <body>
-    <input type="text" id="customer-name-input" class="customer-input" placeholder="Enter Customer Name">
     <div class="receipt" id="receipt">
         <h2>Husein Restaurant</h2>
         <p><strong>Date:</strong> <span id="date"></span></p>
@@ -71,6 +62,8 @@
             { name: "Soda", price: 2 }
         ];
         
+        const names = ["Hussein", "Abdulahi", "Ubah", "Ikraan", "Maryan", "Rahmo", "Mulki", "Hafso", "Hamdi"];
+        
         function generateOrder() {
             let orderList = document.getElementById("order-list");
             let totalElement = document.getElementById("total");
@@ -88,16 +81,15 @@
         }
         
         function preparePrint() {
-            let customerInput = document.getElementById("customer-name-input").value.trim();
-            if (!customerInput) {
-                alert("Please enter customer name");
-                return;
-            }
-            document.getElementById("customer-name").textContent = customerInput;
             document.getElementById("date").textContent = new Date().toLocaleString();
             generateOrder();
             window.print();
         }
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            let randomName = names[Math.floor(Math.random() * names.length)];
+            document.getElementById("customer-name").textContent = randomName;
+        });
     </script>
 </body>
 </html>
