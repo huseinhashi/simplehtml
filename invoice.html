@@ -10,23 +10,47 @@
             text-align: center;
             width: 58mm;
             margin: auto;
+            background-color: #f8f8f8;
         }
         .receipt {
-            border: 1px dashed black;
+            border: 2px dashed black;
             padding: 10px;
+            background: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
         }
-        .hidden {
-            display: none;
+        h2 {
+            margin-bottom: 5px;
+        }
+        p, ul {
+            margin: 5px 0;
+            text-align: left;
+        }
+        ul {
+            padding-left: 15px;
         }
         .print-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 14px;
             cursor: pointer;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .customer-input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: calc(100% - 12px);
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 3px;
         }
     </style>
 </head>
 <body>
+    <input type="text" id="customer-name-input" class="customer-input" placeholder="Enter Customer Name">
     <div class="receipt" id="receipt">
         <h2>Husein Restaurant</h2>
         <p><strong>Date:</strong> <span id="date"></span></p>
@@ -64,9 +88,12 @@
         }
         
         function preparePrint() {
-            let customer = prompt("Enter customer name:");
-            if (!customer) return;
-            document.getElementById("customer-name").textContent = customer;
+            let customerInput = document.getElementById("customer-name-input").value.trim();
+            if (!customerInput) {
+                alert("Please enter customer name");
+                return;
+            }
+            document.getElementById("customer-name").textContent = customerInput;
             document.getElementById("date").textContent = new Date().toLocaleString();
             generateOrder();
             window.print();
